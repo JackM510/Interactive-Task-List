@@ -1,8 +1,8 @@
 //ensure the HTML elements are loaded to the DOM before executing any functions on input elements
 document.addEventListener("DOMContentLoaded", () => {
-    const taskInput = document.querySelector("#newtask input");
-    const taskSection = document.querySelector(".tasks");
-    //event listener for the enter key when the #newtask input is populated
+    const taskInput = document.querySelector("#newtask input"); //the input element for a new task
+    const taskSection = document.querySelector(".tasks"); //the .tasks div where new tasks are added
+    //event listener for the enter key when #newtask input is populated
     if (taskInput) {
       taskInput.addEventListener("keyup", (e) => {
         if (e.key === "Enter") {
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }
-    //event listener for the Add button #push
+    //event listener for #push, the 'Add' button
     const pushButton = document.querySelector("#push");
     if (pushButton) {
       pushButton.onclick = function () {
@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-//function that creates a task
+//function to create a new task in the list when the 'Add' button or ENTER key is pressed
+//this function checks the input is populated before calling the addTask() and deleteTask() functions
 function createTask(taskInput, taskSection) {
     if (taskInput.value.length == 0) {
         alert("The task field is blank. Enter a task name and try again.");
@@ -30,9 +31,9 @@ function createTask(taskInput, taskSection) {
     }
 }
 
-//function to add a task
+//function to add a new task to the .tasks div
 function addTask(taskSection) {
-  //insert HTML that creates each task into the task area div element
+  //create the HTML elements for a new task and append them to the .tasks section
   taskSection.innerHTML +=
   `<div class="task">
   <label id="taskname">
@@ -43,7 +44,8 @@ function addTask(taskSection) {
   <i class="uil uil-trash"></i></div></div>`;
 }
 
-//function to delete a task
+//function to delete a task for the task list
+//this function also adds an onclick listener for the .delete icon on each task
 function deleteTask(taskSection) {
   var current_tasks = document.querySelectorAll(".delete");
         for (var i = 0; i < current_tasks.length; i++) {
@@ -51,12 +53,13 @@ function deleteTask(taskSection) {
                 this.parentNode.remove();
             }
         }
+        //ternary statement to add/remove overflow to the taskSection
         taskSection.offsetHeight >= 300
         ? taskSection.classList.add("overflow")
         : taskSection.classList.remove("overflow");
 }
 
-//function to add strikethrough for a completed task
+//function to add a strikethrough for a completed task
 function updateTask(task) {
     let taskItem = task.parentElement.lastElementChild;
     if (task.checked) {
