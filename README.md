@@ -21,5 +21,5 @@ There are three key files within this project:
   - The addTask() function uses the innerHTML method on the 'taskSection' element and appends a new task with the input value to the list.
 - The **deleteTask()** function which was also called through createTask() adds an onclick() function for the delete icon (which is next to each new task).
   - The deleteTask() function also adds overflow to the 'taskSection' if necessary (when the .tasks div is populated with several tasks).
-- The **updateTask()** function is also referenced during the addTask() method and is assigned as an onclick function for the checkbox that is added to each new task.
-  - The updateTask() function is adds a strikethrough to each task when the checkbox element is 'ticked'. 
+- The **updateTask()** function is also referenced during the addTask() function and is assigned as an onclick function for the checkbox that is added to each new task.
+  - The updateTask() function is adds a strikethrough to each task when the checkbox element is 'ticked'.
