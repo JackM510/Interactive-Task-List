@@ -32,7 +32,6 @@ function createTask(taskInput, taskSection) {
 
 // Add a new task to the .tasks div
 function addTask(taskSection) {
-  //create the HTML elements for a new task and append them to the .tasks section
   taskSection.innerHTML +=
   `<div class="task">
   <label id="taskname">
