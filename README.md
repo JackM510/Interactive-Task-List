@@ -1,4 +1,4 @@
-# Web-Interactive-Task-List
+# Interactive-Task-List
 An interactive Task List Web page as part of the Web Development Fundamentals course on IBM SkillBuild. This project uses minimal HTML and allows a user to dynamically add new tasks to the page using JavaScript. 
 
 There are three key files within this project:
